@@ -1,6 +1,11 @@
 {
   "private": true,
   "dependencies": {
+    "d3": "3.5.17",
+    "lodash": "4.13.1",
+    "rd3": "0.6.5",
+    "react": "15.2.1",
+    "react-dom": "15.2.1",
     "todomvc-app-css": "2.0.6"
   },
   "devDependencies": {
@@ -9,6 +14,7 @@
     "babel-plugin-__coverage__": "11.0.0",
     "babel-preset-es2015-webpack": "6.4.2",
     "babel-preset-es2016": "6.11.3",
+    "babel-preset-react": "6.11.1",
     "babel-preset-stage-2": "6.11.0",
     "chai": "3.5.0",
     "css-loader": "0.23.1",

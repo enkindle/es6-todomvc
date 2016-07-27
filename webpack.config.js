@@ -1,4 +1,5 @@
 const {resolve} = require('path')
+const webpack = require('webpack')
 const webpackValidator = require('webpack-validator')
 const {getIfUtils} = require('webpack-config-utils')
 
@@ -20,5 +21,10 @@ module.exports = env => {
         {test: /\.css$/, loaders: ['style', 'css']},
       ],
     },
+    plugins: [
+      new webpack.ProgressPlugin({
+        profile: ifProd(),
+      })
+    ]
   })
 }
