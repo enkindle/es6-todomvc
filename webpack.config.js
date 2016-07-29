@@ -1,6 +1,7 @@
 const {resolve} = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
 const webpackValidator = require('webpack-validator')
 const {getIfUtils, removeEmpty} = require('webpack-config-utils')
 
@@ -28,8 +29,9 @@ module.exports = env => {
       new webpack.ProgressPlugin({
         profile: ifProd(),
       }),
+      ifProd(new InlineManifestWebpackPlugin()),
       ifProd(new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
+        names: ['vendor', 'manifest'],
       })),
       new HtmlWebpackPlugin({
         template: './index.html',
